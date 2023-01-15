@@ -7,8 +7,8 @@ const pokemonRouter = Router();
 
 pokemonRouter
 .get('/', getAllPokemonsController)
-.get('/', getPokemonController)
-.post('/', createPokemonController);
+// .get('/', getPokemonController)
+// .post('/', createPokemonController);
 
 
 module.exports = pokemonRouter;

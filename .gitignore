@@ -105,3 +105,7 @@ dist
 
 # package-lock.json
 package-lock.json
+package.json
+*.json
+api/package.json
+api/package.json

@@ -15,32 +15,35 @@ module.exports = (sequelize) => {
     },
     hp: {
       type: DataTypes.INTEGER,
-      allowNull: true,
+      allowNull: false,
     },
     attack: {
       type: DataTypes.INTEGER,
-      allowNull: true,
+      allowNull: false,
     },
     defense: {
       type: DataTypes.INTEGER,
-      allowNull: true,
+      allowNull: false,
     },
     speed: {
       type: DataTypes.INTEGER,
-      allowNull: true,
+      allowNull: false,
     },
     height: {
       type: DataTypes.INTEGER,
-      allowNull: true,
+      allowNull: false,
     },
     weight: {
       type: DataTypes.INTEGER,
-      allowNull: true,
+      allowNull: false,
+    },
+    image: {
+      type: DataTypes.STRING,
+      allowNull: false
     },
     createdInDB: {
       type: DataTypes.STRING,
-      allowNull:true,
-      defaultValue: true
+      allowNull: false
     }
 
   });

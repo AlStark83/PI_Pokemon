@@ -1,14 +1,18 @@
 const { Router } = require('express')
-const { createPokemonController } = require('../controllers/createPokemonController.js')
-const { getAllPokemonsController } = require('../controllers/getAllPokemonsController.js')
-const { getPokemonController } = require('../controllers/getPokemonController.js')
+const { createPokemonController } = require('../controllers/createPokemonController')
+const { getAllPokemonsController } = require('../controllers/getAllPokemonsController')
+const { getPokemonController } = require('../controllers/getPokemonController')
 
 const pokemonRouter = Router();
 
 pokemonRouter
-.get('/', getAllPokemonsController)
-.get('/', getPokemonController)
-.post('/', createPokemonController);
+.get('/', /*getAllPokemonsController*/(req,res)=>{
+    res.send('Hola desde pokemonRouter')
+})
+.get('/:id', /*getPokemonController*/(req,res)=>{
+    res.send('Hola con ID desde pokemonRouter')
+})
+// .post('/', createPokemonController);
 
 
 module.exports = pokemonRouter;

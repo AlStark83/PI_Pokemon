@@ -6,15 +6,32 @@ const { Router } = require('express')
 const getAllPokemonsController = async(req,res) => {
     try{
         const coleccion = [];
-        apiPokeApiURL = (await axios.get('https://pokeapi.co/api/v2/pokemon',{headers: {'Accept-Encoding': 'gzip,deflate,compress'}})).data;
-        apiInfo = coleccion.push(apiPokeApiURL.results.map((e) => 
-            {
-            return{
-                name: e.name
-            }
+        let id = 1
+        while (id < 41){   
+            apiPokeApiURL = (await axios.get(`https://pokeapi.co/api/v2/pokemon/${id}`,{headers: {'Accept-Encoding': 'gzip,deflate,compress'}})).data;
+            
+            apiInfo = {
+                name: apiPokeApiURL.name,
+                id:apiPokeApiURL.id,
+                hp: apiPokeApiURL.stats[0].base_stat,
+                attack: apiPokeApiURL.stats[1].base_stat,
+                defense: apiPokeApiURL.stats[2].base_stat,
+                speedattack: apiPokeApiURL.stats[3].base_stat,
+                speedefense: apiPokeApiURL.stats[4].base_stat,
+                speed: apiPokeApiURL.stats[5].base_stat,
+                height: apiPokeApiURL.height,
+                weight: apiPokeApiURL.weight,
+                img: apiPokeApiURL.sprites.other["official-artwork"].front_default,
+            };
+
+            coleccion.push(apiInfo);
+
+            id++;
         }
-        ));
-        console.log(apiInfo);
+        console.log(apiPokeApiURL.id);
+
+
+
         infoDB = await Pokemon.findAll({
             include:{
                 model:Type,

@@ -8,9 +8,7 @@ const pokemonRouter = Router();
 
 pokemonRouter
 .get('/', getAllPokemonsController)
-// .get('/:id', /*getPokemonController*/(req,res)=>{
-//     res.send('Hola con ID desde pokemonRouter')
-// })
+.get('/:id', getPokemonController)
 // .post('/', createPokemonController);
 
 

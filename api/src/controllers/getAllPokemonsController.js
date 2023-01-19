@@ -3,8 +3,7 @@ const { Pokemon, Type } = require('../db')
 const { Router } = require('express')
 
 
-const getAllPokemonsController = async(req,res) => {
-    try{
+const loadingAllPokemons = async () => { 
         const coleccion = [];
         let id = 1
         while (id < 41){   
@@ -24,9 +23,9 @@ const getAllPokemonsController = async(req,res) => {
                 img: apiPokeApiURL.sprites.other["dream_world"].front_default !== undefined? apiPokeApiURL.sprites.other["dream_world"].front_default : 'https://i.ytimg.com/vi/MjyjMDkmWIk/maxresdefault.jpg',
                 type: apiPokeApiURL.types.map(e => e.type.name) !== undefined? apiPokeApiURL.types.map(e => e.type.name) : 'Type not found' 
             };
-
+            
             coleccion.push(apiInfo);
-
+            
             id++;
         }
        
@@ -37,12 +36,25 @@ const getAllPokemonsController = async(req,res) => {
                 through: {attributes:[]},
             },
         })
-
+        
         const allInfo = infoDB? [...infoDB, ...coleccion] : [...coleccion];
         console.log(coleccion);
-        
-
-        res.send(allInfo);
+        return allInfo
+    }
+    
+    const getAllPokemonsController = async(req,res) => {
+    
+        try{ 
+        const name = req.query.name;
+        let allData = await loadingAllPokemons();
+        if(name){
+            let pokemonName = allData.filter(el => el.name.toLowerCase().includes(name.toLowerCase()))
+            pokemonName.length ?
+            res.status(200).send(pokemonName) :
+            res.status(404).send('Pokemon no encontrado');
+        } else {
+            res.status(200).send(allData)
+        }
     }catch(error){
         console.log(error);        
     }

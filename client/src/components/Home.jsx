@@ -1,7 +1,13 @@
 import React from "react"; // eslint-disable-next-line
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getPokemons } from "../actions";
+import {
+	getPokemons,
+	filterPokemonsByType,
+	filterPokemonsByCreated,
+	orderByName,
+	orderByAttack
+} from "../actions";
 import { Link } from "react-router-dom";
 import Card from "./Card";
 import Paginado from "./Paginado";
@@ -9,6 +15,8 @@ import Paginado from "./Paginado";
 export default function Home() {
 	const dispatch = useDispatch();
 	const allPokemons = useSelector((state) => state.pokemons);
+	const types = useSelector((state) => state.types);
+	const [orden, setOrden] = useState("");
 	const [currentPage, setCurrentPage] = useState(1);
 	const [pokemonsPerPage, setPokemonsPerPage] = useState(12);
 	const indexOfLastPokemon = currentPage * pokemonsPerPage; //12
@@ -17,20 +25,38 @@ export default function Home() {
 		indexOfFirtsPokemon,
 		indexOfLastPokemon
 	);
+	useEffect(() => {
+		dispatch(getPokemons()); // eslint-disable-next-line
+	}, [dispatch]);
 
 	const paginado = (number) => {
 		setCurrentPage(number);
 	};
-
-	useEffect(() => {
-		dispatch(getPokemons()); // eslint-disable-next-line
-	}, [dispatch]);
 
 	function handleClick(e) {
 		e.preventDefault();
 		dispatch(getPokemons());
 	}
 
+	function handleSortByName(e) {
+		e.preventDefault();
+		dispatch(orderByName(e.target.value));
+		setCurrentPage(1);
+		setOrden(`Ordenado ${e.target.value}`);
+	}
+	function handleSortByAttack(e) {
+		e.preventDefault();
+		dispatch(orderByAttack(e.target.value));
+		setCurrentPage(1);
+		setOrden(`Ordenado ${e.target.value}`);
+	}
+
+	function handlerFilterType(e) {
+		dispatch(filterPokemonsByType(e.target.value));
+	}
+	function handlerFilterCreated(e) {
+		dispatch(filterPokemonsByCreated(e.target.value));
+	}
 	return (
 		<div>
 			<Link to="/pokemon">Crear Pokemon</Link>
@@ -42,15 +68,16 @@ export default function Home() {
 				Volver a cargar todos los pokemons
 			</button>
 			<div>
-				<select name="ordenAlfabetico" id="OrdenAlfa">
+				<select onChange={(e) => handleSortByName(e)}>
 					<option value="asc">Ascendente</option>
 					<option value="desc">Descendente</option>
 				</select>
-				<select name="ordenPorAtaque" id="OrdenAttack">
+				<select onChange={(e) => handleSortByAttack(e)}>
 					<option value="asc">Ascendente</option>
 					<option value="desc">Descendente</option>
 				</select>
-				<select name="FiltroPorTipo" id="TypeFilter">
+				<select onChange={(e) => handlerFilterType(e)}>
+					<option value="all">All</option>
 					<option value="normal">Normal</option>
 					<option value="flying">Flying</option>
 					<option value="fighting">Fighting</option>
@@ -72,10 +99,10 @@ export default function Home() {
 					<option value="unknown">Unknown</option>
 					<option value="shadow">Shadow</option>
 				</select>
-				<select name="FiltroPorCreado" id="CreatedByFilter">
-					<option value="all">Todos</option>
-					<option value="created">Creados</option>
-					<option value="api">Existentes</option>
+				<select onChange={(e) => handlerFilterCreated(e)}>
+					<option value="all">All</option>
+					<option value="created">Created</option>
+					<option value="api">Existents</option>
 				</select>
 				<Paginado
 					pokemonsPerPage={pokemonsPerPage}
@@ -87,9 +114,10 @@ export default function Home() {
 						return (
 							<div>
 								<Card
+									id={el.id}
 									name={el.name}
 									img={el.img}
-									types={el.types.map((el) => el.name)}
+									types={el.types}
 								/>
 							</div>
 						);

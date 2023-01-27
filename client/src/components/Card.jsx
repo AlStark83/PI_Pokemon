@@ -1,8 +1,9 @@
 import React from 'react';
 
-export default function Card({ name, img, types}){
+export default function Card({id, name, img, types}){
     return(
-        <div>
+        <div
+        key={id}>
         <h3>{name}</h3>
         <h5>{types}</h5>
         <img src={img} alt="not found" />

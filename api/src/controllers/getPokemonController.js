@@ -1,24 +1,26 @@
 const axios = require('axios');
-const { Pokemon, Type } = require('../db')
-const { Router } = require('express')
+const { Pokemons, Type } = require('../db.js')
 
 
 const getPokemonController = async(req, res) => {
     const { id } = req.params;
+    function uuidValidation (item)
+    {
+      let regexUuid = /[a-f0-9]{8}-[a-f0-9]{4}-4[a-f0-9]{3}-[89aAbB][a-f0-9]{3}-[a-f0-9]{12}/;
+      return item.match(regexUuid)?true:false
+    }
     if (
-        id.match(/^[a-f0-9]{8}-?[a-f0-9]{4}-?4[a-f0-9]{3}-?[89ab][a-f0-9]{3}-?[a-f0-9]{12}$/i) //regular expression para validar UUID
+     uuidValidation(id)
     ){
         try{
-            let pokemonDb = await Pokemon.findByPk(
-                id,
-                {include: [
-                    {model:Type,
-                    attributes: ['name'],
-                    through: {attributes: []}
-                }
-                ],
-            })
-            res.send(pokemonDb);
+            let pokemonDb = await Pokemons.findByPk(
+            
+                  id,            
+                  {include: [
+                    {model: Type, attributes: ["name"],   through: {attributes: []}}
+            ],}
+            )
+              res.send(pokemonDb);
         
     } catch(error){
         console.log(error, 'error en Pokemon por ID de Base de Datos')     
@@ -34,8 +36,8 @@ const getPokemonController = async(req, res) => {
                     hp: apiPokeApiURL.stats[0].base_stat !== undefined? apiPokeApiURL.stats[0].base_stat : 'HP not found',
                     attack: apiPokeApiURL.stats[1].base_stat !== undefined? apiPokeApiURL.stats[1].base_stat : 'Attack not found',
                     defense: apiPokeApiURL.stats[2].base_stat !== undefined? apiPokeApiURL.stats[2].base_stat : 'Defense not found',
-                    specialAttack: apiPokeApiURL.stats[3].base_stat !== undefined? apiPokeApiURL.stats[3].base_stat : 'Special Attack not found',
-                    specialDefense: apiPokeApiURL.stats[4].base_stat !== undefined? apiPokeApiURL.stats[4].base_stat : 'Special Defense not found',
+                    // specialAttack: apiPokeApiURL.stats[3].base_stat !== undefined? apiPokeApiURL.stats[3].base_stat : 'Special Attack not found',
+                    // specialDefense: apiPokeApiURL.stats[4].base_stat !== undefined? apiPokeApiURL.stats[4].base_stat : 'Special Defense not found',
                     speed: apiPokeApiURL.stats[5].base_stat !== undefined? apiPokeApiURL.stats[5].base_stat : 'Speed not found',
                     height: apiPokeApiURL.height !== undefined? apiPokeApiURL.height : 'Height not found',
                     weight: apiPokeApiURL.weight !== undefined? apiPokeApiURL.weight : 'Weight not found',

@@ -14,7 +14,7 @@ types.forEach(e => {
     })
 });
 const allTypes = await Type.findAll();
-res.send(allTypes);
+res.send(allTypes.map(e=> e.name));
 }
 
 module.exports = {getAllTypes};

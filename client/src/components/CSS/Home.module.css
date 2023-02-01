@@ -1,0 +1,12 @@
+.grid{
+display: grid;
+grid-template-columns: repeat(auto-fill, 200px);
+gap: 40px;
+padding: 40px;
+align-items: center;
+}
+
+.item{
+list-style: none;
+background-color: green;
+}

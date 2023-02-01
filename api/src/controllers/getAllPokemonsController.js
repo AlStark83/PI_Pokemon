@@ -37,7 +37,7 @@ const loadingAllPokemons = async () => {
         })
         infoDB.forEach(e => {
             let newArr = e.dataValues.types.map(element => element.name)
-            e.dataValues.types = newArr.join(", ");
+            e.dataValues.types = newArr.join(" ");
         }) 
         
         const allInfo = infoDB? [...infoDB, ...coleccion] : [...coleccion];

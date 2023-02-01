@@ -22,10 +22,19 @@ export default function Detail(props){
                 myPokemon.name ?
                 <div>
 
-                    <h1>Hola</h1>
+                    <h1>Pokemon Stats & Details</h1>
 
                     <h1>{myPokemon.name}</h1>
                     <img src={myPokemon.img} alt={myPokemon.name}/>
+                    <div>
+                    <p>Healt Point: {myPokemon.hp}</p>
+                    <p>Attack: {myPokemon.attack}</p>
+                    <p>Defense: {myPokemon.defense}</p>
+                    <p>Speed: {myPokemon.speed}</p>
+                    <p>Height: {myPokemon.height}</p>
+                    <p>Weight: {myPokemon.weight}</p>
+                    <p>Types: {myPokemon.type.map(e => e+ " ")}</p>
+                    </div>
 
 
                 </div>

@@ -1,4 +1,4 @@
-import React from "react"; // eslint-disable-next-line
+import React from "react"; 
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -16,10 +16,10 @@ import styles from "./CSS/Home.module.css";
 
 export default function Home() {
 	const dispatch = useDispatch();
-	const allPokemons = useSelector((state) => state.pokemons);
-	const types = useSelector((state) => state.types);
+	const allPokemons = useSelector((state) => state.pokemons);// eslint-disable-next-line
+	const types = useSelector((state) => state.types);// eslint-disable-next-line
 	const [orden, setOrden] = useState("");
-	const [currentPage, setCurrentPage] = useState(1);
+	const [currentPage, setCurrentPage] = useState(1);// eslint-disable-next-line
 	const [pokemonsPerPage, setPokemonsPerPage] = useState(12);
 	const indexOfLastPokemon = currentPage * pokemonsPerPage; //12
 	const indexOfFirtsPokemon = indexOfLastPokemon - pokemonsPerPage; //0
@@ -28,7 +28,7 @@ export default function Home() {
 		indexOfLastPokemon
 	);
 	useEffect(() => {
-		dispatch(getPokemons()); // eslint-disable-next-line
+		dispatch(getPokemons()); 
 	}, [dispatch]);
 
 	const paginado = (number) => {

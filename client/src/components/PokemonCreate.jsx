@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link, useHistory } from "react-router-dom";
-import { postPokemon, getNamePokemon, getTypes } from "../actions/index.js";
+import { postPokemon, getTypes } from "../actions/index.js";
 import { useDispatch, useSelector } from "react-redux";
 
 const validate = (input) => {
@@ -153,7 +153,7 @@ export default function PokemonCreate() {
 	}
 
 	useEffect(() => {
-		dispatch(getTypes());
+		dispatch(getTypes()); // eslint-disable-next-line
 	}, []);
 	return (
 		<div className="principalContainer">

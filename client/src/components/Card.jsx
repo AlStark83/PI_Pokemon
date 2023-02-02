@@ -8,9 +8,9 @@ export default function Card({ id, name, img, types }) {
 			<Link to={`/pokemons/${id}`}>
 				<img className={styles.pokemonImage} src={img} alt="not found" />
 			</Link>
-            <p>{id}</p>
-			<h5>{types}</h5>
-			<h3>{name}</h3>
+			<p>{id}</p>
+			<h5>{types.map((e) => e.name + " ")}</h5>
+			<h3 className={styles.name}>{name}</h3>
 		</div>
 	);
 }

@@ -19,7 +19,7 @@ const loadingAllPokemons = async () => {
                 height: apiPokeApiURL.height !== undefined? apiPokeApiURL.height : 'Height not found',
                 weight: apiPokeApiURL.weight !== undefined? apiPokeApiURL.weight : 'Weight not found',
                 img: apiPokeApiURL.sprites.other["dream_world"].front_default !== undefined? apiPokeApiURL.sprites.other["dream_world"].front_default : 'https://i.ytimg.com/vi/MjyjMDkmWIk/maxresdefault.jpg',
-                types: apiPokeApiURL.types.map(e => e.type.name) !== undefined? apiPokeApiURL.types.map(e => e.type.name) : 'Type not found' 
+                types: apiPokeApiURL.types.map(e => e.type) !== undefined? apiPokeApiURL.types.map(e => e.type) : 'Type not found' 
             };
             
             coleccion.push(apiInfo);
@@ -35,10 +35,10 @@ const loadingAllPokemons = async () => {
             through: {attributes:[]},
             },
         })
-        infoDB.forEach(e => {
-            let newArr = e.dataValues.types.map(element => element.name)
-            e.dataValues.types = newArr.join(" ");
-        }) 
+        // infoDB.forEach(e => {
+        //     let newArr = e.dataValues.types.map(element => element.name)
+        //     e.dataValues.types = newArr.join(" ");
+        // }) 
         
         const allInfo = infoDB? [...infoDB, ...coleccion] : [...coleccion];
         console.log(coleccion.length);

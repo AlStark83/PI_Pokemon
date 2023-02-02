@@ -3,10 +3,57 @@ display: grid;
 grid-template-columns: repeat(auto-fill, 200px);
 gap: 40px;
 padding: 40px;
-align-items: center;
+align-items: stretch;
+justify-content: space-around;
+}
+
+.pokedexImg{
+  margin-top: 16px;
 }
 
 .item{
 list-style: none;
-background-color: green;
+background-color:rgb(62, 62, 255);
+border-radius: 12px;
+}
+.button {
+  font-size: 1.6rem;
+  margin-top: 24px;
+  padding: 12px;
+	color: rgb(255, 222, 38);
+	background: rgb(39, 7, 221);
+  border-radius: 20%;
+  border-color: rgb(2, 2, 119);
+  box-shadow: 3px 3px rgba(11, 1, 70, .6);
+  cursor: pointer;
+}
+.button:hover{
+  color: rgb(39, 7, 221);
+  background-color:rgb(255, 222, 38) ;
+
+}
+select{
+  font-weight: bold;
+  color: rgb(39, 7, 221);
+  align-content: center;
+}
+label{
+color: rgb(255, 222, 38);
+background: rgb(39, 7, 221);
+border-radius: 5px;
+padding: 4px 16px;
+margin: 4px 16px;
+}
+.filters{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 150px);
+gap: 12px;
+  margin: 8px;
+  justify-content: space-around;
+}
+.buttonsAndSearch{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 350px);
+  align-items: stretch;
+  justify-content: space-around;
 }

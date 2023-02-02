@@ -1,4 +1,5 @@
 const axios = require('axios');
+const e = require('express');
 const { Pokemons, Type } = require('../db.js')
 
 
@@ -20,6 +21,8 @@ const getPokemonController = async(req, res) => {
                     {model: Type, attributes: ["name"],   through: {attributes: []}}
             ],}
             )
+            // let newArr = pokemonDb.types.map(element => element.name)
+            // pokemonDb.types = newArr.join(" ");
               res.send(pokemonDb);
         
     } catch(error){
@@ -42,7 +45,7 @@ const getPokemonController = async(req, res) => {
                     height: apiPokeApiURL.height !== undefined? apiPokeApiURL.height : 'Height not found',
                     weight: apiPokeApiURL.weight !== undefined? apiPokeApiURL.weight : 'Weight not found',
                     img: apiPokeApiURL.sprites.other["dream_world"].front_default !== undefined? apiPokeApiURL.sprites.other["dream_world"].front_default : 'https://i.ytimg.com/vi/MjyjMDkmWIk/maxresdefault.jpg',
-                    type: apiPokeApiURL.types.map(e => e.type.name) !== undefined? apiPokeApiURL.types.map(e => e.type.name) : 'Type not found' 
+                    types: apiPokeApiURL.types.map(e => e.type) !== undefined? apiPokeApiURL.types.map(e => e.type) : 'Type not found' 
                 }
                 res.send(apiInfo);
     }catch(error){

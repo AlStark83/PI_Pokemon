@@ -67,7 +67,7 @@ const validate = (input) => {
 	return errors;
 };
 // };
-export default function PokemonCreate() {
+export default function Form() {
 	const dispatch = useDispatch();
 	const history = useHistory();
 	const pokemons = useSelector((state) => state.allpokemons);

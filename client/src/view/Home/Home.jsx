@@ -9,11 +9,11 @@ import {
 	orderByAttack,
 } from "../actions";
 import { Link } from "react-router-dom";
-import Card from "./Card";
-import Paginado from "./Paginado";
-import SearchBar from "./SearchBar";
+import Card from "../../components/Card";
+import Paginado from "../../components/Paginado";
+import SearchBar from "../../components/SearchBar";
 import styles from "./CSS/Home.module.css";
-import Loader from "./Loader";
+import Loader from "../../components/Loader";
 
 export default function Home() {
 	const dispatch = useDispatch();

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { getDetail } from "../actions/index";
 import { useEffect } from "react";
-import Loader from "./Loader";
+import Loader from "../../components/Loader";
 import styles from "./CSS/Detail.module.css";
 
 export default function Detail(props) {

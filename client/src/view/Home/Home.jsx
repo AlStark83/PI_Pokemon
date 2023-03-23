@@ -7,12 +7,12 @@ import {
 	filterPokemonsByCreated,
 	orderByName,
 	orderByAttack,
-} from "../actions";
+} from "../../redux/actions/index";
 import { Link } from "react-router-dom";
 import Card from "../../components/Card";
 import Paginado from "../../components/Paginado";
 import SearchBar from "../../components/SearchBar";
-import styles from "./CSS/Home.module.css";
+import styles from "./Home.module.css";
 import Loader from "../../components/Loader";
 
 export default function Home() {

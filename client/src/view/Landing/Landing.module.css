@@ -1,0 +1,33 @@
+.landing {
+	background-image: url("https://k11.kn3.net/3375370CC.png");
+	background-size: 100vh;
+  background-repeat:no-repeat;
+  background-position: center;
+	width: 100%;
+	min-height: 95vh;
+	padding-top: 37px;
+	opacity: 0.99;
+	color: rgb(255, 222, 38);
+	text-shadow: 5px 3px rgb(39, 7, 221);
+	align-content: center;
+	justify-content: end;
+  margin: 10px;
+}
+
+.button {
+  font-size: 3rem;
+  margin-top: 80px;
+  padding: 10px;
+	color: rgb(255, 222, 38);
+	background: rgb(39, 7, 221);
+  border-radius: 20%;
+  border-color: rgb(2, 2, 119);
+  box-shadow: 3px 3px rgba(11, 1, 70, .6);
+  cursor: pointer;
+}
+
+.button:hover{
+  color: rgb(39, 7, 221);
+  background-color:rgb(255, 222, 38) ;
+
+}

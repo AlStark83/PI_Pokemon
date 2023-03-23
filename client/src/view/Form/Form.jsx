@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Link, useHistory } from "react-router-dom";
-import { postPokemon, getTypes } from "../actions/index.js";
+import { postPokemon, getTypes } from "../../redux/actions/index";
 import { useDispatch, useSelector } from "react-redux";
-import styles from "./CSS/PokemonCreate.module.css";
+import styles from "./Form.module.css";
 
 const validate = (input) => {
 	const errors = {};
@@ -67,7 +67,7 @@ const validate = (input) => {
 	return errors;
 };
 // };
-export default function PokemonCreate() {
+export default function Form() {
 	const dispatch = useDispatch();
 	const history = useHistory();
 	const pokemons = useSelector((state) => state.allpokemons);

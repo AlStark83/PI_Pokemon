@@ -1,12 +1,11 @@
 body {
-  background-image: "https://i.pinimg.com/originals/a1/07/53/a10753dffd33071ac5b2e7596d350b5e.png";
   margin: 0;
   font-family: "Lato", BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: rgba(10, 10, 10, 10.904);
+  background-color: #EEE;
 }
 
 code {

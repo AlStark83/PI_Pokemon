@@ -65,25 +65,26 @@ export default function Home() {
 			{allPokemons.length ? (
 				<div>
 					<div>
-						<img className={styles.pokedexImg}
+						<img
+							className={styles.pokedexImg}
 							src="https://fontmeme.com/permalink/230202/46eddc01dfe4ad5ceeaf1f75fb46d068.png"
 							alt="Pokedex"
 						/>
 						<br />
 						<div className={styles.buttonsAndSearch}>
 							<Link to="/home">
-							<button
-								className={styles.button}
-								onClick={(e) => {
-									handleClick(e);
-								}}>
-								Reload All Pokemons
-							</button>
+								<button
+									className={styles.button}
+									onClick={(e) => {
+										handleClick(e);
+									}}>
+									Reload Pokemons
+								</button>
 							</Link>
 							<Link to="/create">
 								<button className={styles.button}>Create Pokemon</button>
 							</Link>
-							<div>
+							<div className={styles.searchBar}>
 								<SearchBar />
 							</div>
 						</div>

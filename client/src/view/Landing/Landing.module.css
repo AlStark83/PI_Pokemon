@@ -1,6 +1,6 @@
 .landing {
-	background-image: url("../../assets/890850-free-download-beautiful-forest-wallpaper-2406x1504.jpg");
-	background-size: auto;
+	background-image: url("https://res.cloudinary.com/dfivzhcuw/image/upload/v1679688535/Landing-Background_c6x7yz.png");
+	background-size: cover;
   /* width: 100vw; */
   height: 100vh;
 	color: rgb(255, 219, 13);
@@ -13,7 +13,7 @@
   gap:24px
 }
 img {
-  max-width: 80vh;
+  max-width: 50vw;
   align-items: center;
   justify-items: center;
 }
@@ -22,17 +22,17 @@ img {
 	align-items: center;
 	justify-content: center;
 	width: 40vw;
-	min-width: 400px;
+	min-width: 320px;
 }
 .col2 {
-	background-color: rgba(250,250, 250,1);
+	background-color: rgba(250,250, 250,.1);
 	border-radius: 15px;
-	width: 40vw;
+	height:  50vh;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: space-around;
-	min-width: 400px;
+	min-width: 300px;
 }
 
 .button {
@@ -51,5 +51,5 @@ img {
 .button:hover {
 	color: rgb(77, 179, 138);
 	background: transparent;
-	border-color: rgb(77, 179, 138);
+	border-color: rgb(77, 179, 138, 0.6);
 }

@@ -5,16 +5,16 @@ import styles from "./Landing.module.css";
 export default function LandingPage() {
 	return (
 		<div className={styles.landing}>
-			<div className={styles.image}>
+			{/* <div className={styles.image}>
 				<img
 					src="https://res.cloudinary.com/dfivzhcuw/image/upload/v1679021482/Squirtle_pffwsm.png"
 					alt="Squirtle"
 				/>
-			</div>
+			</div> */}
 			<div className={styles.col2}>
 				<div className={styles.logo}>
 					<img
-						src="https://fontmeme.com/permalink/230128/d791fc1496ece52131cfa65e9dc9bf5c.png"
+						src="https://res.cloudinary.com/dfivzhcuw/image/upload/v1679687192/pokemon-logo_oygf84.png"
 						alt="Pokemon Logo"
 					/>
 				</div>

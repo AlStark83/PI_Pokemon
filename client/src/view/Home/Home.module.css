@@ -1,8 +1,8 @@
 .grid{
 display: grid;
 grid-template-columns: repeat(auto-fill, 200px);
-gap: 40px;
-padding: 40px;
+gap: 32px;
+padding: 16px;
 align-items: stretch;
 justify-content: space-around;
 }
@@ -17,43 +17,59 @@ background-color:rgb(62, 62, 255);
 border-radius: 12px;
 }
 .button {
-  font-size: 1.6rem;
-  margin-top: 24px;
-  padding: 12px;
-	color: rgb(255, 222, 38);
-	background: rgb(39, 7, 221);
-  border-radius: 20%;
-  border-color: rgb(2, 2, 119);
-  box-shadow: 3px 3px rgba(11, 1, 70, .6);
+  width: 180px;
+	height: 32px;
+  font-size: 1rem;
+  margin-top: 12px;
+  /* padding: 12px; */
+	color: rgb(250, 250, 250);
+	background: linear-gradient(90deg, rgb(161, 220, 148),rgb(37,204,169));
+  border-radius: 30px;
+  border-color: rgb(77, 179, 138);
+  box-shadow: 3px 3px rgba(77, 179, 138, 0.6);
   cursor: pointer;
 }
 .button:hover{
-  color: rgb(39, 7, 221);
-  background-color:rgb(255, 222, 38) ;
-
+  color: rgb(77, 179, 138);
+	background: transparent;
+	border-color: rgb(77, 179, 138, 0.6);
 }
 select{
+  height: 32px;
   font-weight: bold;
-  color: rgb(39, 7, 221);
+  color: rgb(77, 179, 138);
   align-content: center;
+  text-align: center;
+  border-color: rgb(77, 179, 138);
+  border-radius: 30px;
+}
+select:hover{
+  color:rgb(250, 250, 250);
+  background-color:  rgb(77, 179, 138);
 }
 label{
-color: rgb(255, 222, 38);
-background: rgb(39, 7, 221);
-border-radius: 5px;
+  width: 180px;
+color: rgb(77, 179, 138);
+background: transparent;
+border-color: rgb(77, 179, 138);
+border: 5px;
+border-radius: 30px;
 padding: 4px 16px;
 margin: 4px 16px;
 }
 .filters{
   display: grid;
   grid-template-columns: repeat(auto-fill, 150px);
-gap: 12px;
+  gap: 12px;
   margin: 8px;
   justify-content: space-around;
 }
 .buttonsAndSearch{
   display: grid;
-  grid-template-columns: repeat(auto-fill, 350px);
+  grid-template-columns: repeat(auto-fill, 180px);
   align-items: stretch;
   justify-content: space-around;
+}
+.searchBar{
+width: 400px;
 }

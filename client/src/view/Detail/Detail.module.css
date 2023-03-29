@@ -1,22 +1,36 @@
 .mainContainer{
-  color:gold;
-
-
+  display: flex;
+  height: 100vh;
+  background-color: aquamarine;
+  color:rgb(72, 105, 109);
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
 }
 
 .detailsContainer{
+  background-color: brown;
   display: flex;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
 }
 .col{
-  max-width: 400px;
-  margin: 15px;
-  height: auto;
+  background-color: chartreuse;
+  width: 40vw;
+  height: 80vh;
+  max-width: 480px;
+  min-width: 352px;
+  max-height: 520px;
+  min-height: 400px;
+
 }
 
 .pokemonImg{
+  width: 30vw;
+  height: auto;
   border-radius: 15px;
   max-width:  400px; 
 }
@@ -25,36 +39,29 @@
   background-color: rgb(39, 7, 221) ;
   padding: 24px;
   border-radius: 20px;
-  
 }
 
 .firstItem{
   margin-top: 0;
-  
 }
 
 .pokemonName{
-  text-transform: uppercase;
-  text-shadow: -4px 4px rgb(28, 6, 150);
-  background-color: rgb(39, 7, 221);;
-  border-radius: 20px;
-  border-color: rgb(28, 6, 150);
+  text-transform: capitalize;
   
 }
 
 .button {
-  font-size: 1.6rem;
-  margin-top: 24px;
-  padding: 12px;
-	color: rgb(255, 222, 38);
-	background: rgb(39, 7, 221);
-  border-radius: 20%;
-  border-color: rgb(2, 2, 119);
-  box-shadow: 3px 3px rgba(11, 1, 70, .6);
-  cursor: pointer;
-}
-p{
-  text-shadow: -2px 2px rgb(18, 3, 102);
+  width: 160px;
+	height: 32px;
+	font-size: 1rem;
+	margin-top: 12px;
+	/* padding: 12px; */
+	color: rgb(250, 250, 250);
+	background: linear-gradient(90deg, rgb(161, 220, 148), rgb(37, 204, 169));
+	border-radius: 30px;
+	border-color: rgb(77, 179, 138);
+	box-shadow: 3px 3px rgba(77, 179, 138, 0.6);
+	cursor: pointer;
 }
 .types{
   text-transform: capitalize;

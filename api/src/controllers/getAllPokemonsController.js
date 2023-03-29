@@ -18,7 +18,7 @@ const loadingAllPokemons = async () => {
                 speed: apiPokeApiURL.stats[5].base_stat !== undefined? apiPokeApiURL.stats[5].base_stat : 'Speed not found',
                 height: apiPokeApiURL.height !== undefined? apiPokeApiURL.height : 'Height not found',
                 weight: apiPokeApiURL.weight !== undefined? apiPokeApiURL.weight : 'Weight not found',
-                img: apiPokeApiURL.sprites.other["dream_world"].front_default !== undefined? apiPokeApiURL.sprites.other["dream_world"].front_default : 'https://i.ytimg.com/vi/MjyjMDkmWIk/maxresdefault.jpg',
+                img: apiPokeApiURL.sprites.other["home"].front_default !== undefined? apiPokeApiURL.sprites.other["home"].front_default : 'https://i.ytimg.com/vi/MjyjMDkmWIk/maxresdefault.jpg',
                 types: apiPokeApiURL.types.map(e => e.type) !== undefined? apiPokeApiURL.types.map(e => e.type) : 'Type not found' 
             };
             

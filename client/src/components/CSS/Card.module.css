@@ -1,11 +1,10 @@
 .pokemonCard{
 list-style: none;
-font-size: 1.3rem;
-background-color: rgb(10, 10, 10);
-color: rgb(255, 252, 62);
+font-size: .8rem;
+background-color: transparent;
+color: rgb(72, 105, 109);
 border-radius: 12px;
 text-align: center;
-text-shadow: 15px, 15px, #ccc900;
 }
 
 .pokemonCard:hover{
@@ -15,16 +14,14 @@ text-shadow: 15px, 15px, #ccc900;
 .pokemonImage{
   top: 10px;
   border-radius: 10px;
-  max-width: 200px;
+  max-width: 64px;
 }
 
 .name{
   text-transform: capitalize;
+font-size: .9rem;
 }
 
-p{
-  font-size: .9rem;
-}
 h5{
   text-transform: capitalize;
 

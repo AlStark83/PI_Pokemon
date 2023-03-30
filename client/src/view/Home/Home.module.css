@@ -103,14 +103,6 @@ label {
 	text-align: center;
 	width: 160px;
 }
-.grid{
-	max-width: 1080px;
-	display: flex;
-	flex-direction: row;
-	justify-content: space-evenly;
-	gap: 8px;
-	margin-bottom: 12px;
-}
 li{
 	height: 80px;
 }
@@ -121,9 +113,16 @@ li{
 	flex-direction: column;
 	align-items: center;
 }
-.gridContainer{
+.grid{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	width: 90vw;
+	gap:24px;
+	width: 80vw;
 	max-width: 1080px;
-	min-width: 360px;
-	margin-top: 8px;
-	margin-bottom: 8px;
+	min-width: 320px;
+	margin-top: 16px;
+	margin-bottom: 16px;
 }

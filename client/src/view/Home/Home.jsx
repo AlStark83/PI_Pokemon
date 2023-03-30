@@ -21,8 +21,8 @@ export default function Home() {
 	const types = useSelector((state) => state.types); // eslint-disable-next-line
 	const [orden, setOrden] = useState("");
 	const [currentPage, setCurrentPage] = useState(1); // eslint-disable-next-line
-	const [pokemonsPerPage, setPokemonsPerPage] = useState(12);
-	const indexOfLastPokemon = currentPage * pokemonsPerPage; //12
+	const [pokemonsPerPage, setPokemonsPerPage] = useState(20);
+	const indexOfLastPokemon = currentPage * pokemonsPerPage; //20
 	const indexOfFirtsPokemon = indexOfLastPokemon - pokemonsPerPage; //0
 	const currentPokemons = allPokemons.slice(
 		indexOfFirtsPokemon,

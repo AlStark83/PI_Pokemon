@@ -6,7 +6,7 @@ const { Router } = require('express')
 const loadingAllPokemons = async () => { 
         const coleccion = [];
         let id = 1
-        while (id < 41){   
+        while (id < 152){   
             apiPokeApiURL = (await axios.get(`https://pokeapi.co/api/v2/pokemon/${id}`,{headers: {'Accept-Encoding': 'gzip,deflate,compress'}})).data;
             
             apiInfo = {

@@ -14,8 +14,8 @@ export default function Detail(props) {
 		dispatch(getDetail(props.match.params.id)); // eslint-disable-next-line
 	}, []);
 	const myPokemon = useSelector((state) => state.detail);
-
 	console.log(myPokemon);
+	// console.log(myPokemon.types.length);
 	return (
 		<div>
 			{
@@ -23,7 +23,7 @@ export default function Detail(props) {
 				myPokemon.name ? (
 					<div className={styles.mainContainer}>
 						<div className={styles.detailsContainer}>
-							<div className={styles.col}>
+							<div id={styles.pokemonAndName}className={styles.col}>
 								<img
 									className={styles.pokemonImg}
 									src={myPokemon.img}
@@ -32,22 +32,51 @@ export default function Detail(props) {
 								<h1 className={styles.pokemonName}>
 									<strong>{myPokemon.name}</strong>
 								</h1>
-								<p>{myPokemon.hp} HP</p>
+								<p id={styles.hp}>{myPokemon.hp} HP</p>
+								<hr className={styles.hpLine} />
 							</div>
 							<div className={styles.col}>
 								<div className={styles.pokemonDetails}>
-									<p>Weight: {myPokemon.weight}</p>
-									<p className={styles.types}>
-										Types: {myPokemon.types.map((e) => e.name + " ")}
-									</p>
-									<p>Height: {myPokemon.height}</p>
-									<p>Attack: {myPokemon.attack}</p>
-									<p>Defense: {myPokemon.defense}</p>
-									<p>Speed: {myPokemon.speed}</p>
+									<div className={styles.topDetails}>
+										<div className={styles.detail}>
+											<h3>{myPokemon.weight / 10}Kg</h3>
+											<p>WEIGHT</p>
+										</div>
+										<div className={styles.types}>
+											<div className={styles.detail}>
+												{/* Types: {myPokemon.types.length === 1? myPokemon.types[0].name : myPokemon.types.map((e) => e.name + " / ")} */}
+												<p>Types</p>
+												<h5>
+													{myPokemon.types.length === 1
+														? myPokemon.types[0].name
+														: `${myPokemon.types[0].name} / ${myPokemon.types[1].name}`}
+												</h5>
+											</div>
+										</div>
+										<div className={styles.detail}>
+											<h3>{myPokemon.height / 10}m</h3>
+											<p>HEIGHT</p>
+										</div>
+									</div>
+									<hr className={styles.lineDetails}/>
+									<div className={styles.bottonDetails}>
+										<div className={styles.detail}>
+											<h3>{myPokemon.attack}</h3>
+											<p>ATTACK</p>
+										</div>
+										<div className={styles.detail}>
+										<h3>{myPokemon.defense}</h3>
+										<p>DEFENSE</p>
+										</div>
+										<div className={styles.detail}>
+										<h3>{myPokemon.speed}</h3>
+										<p>SPEED</p>
+										</div>
+									</div>
+									<Link to="/home">
+										<button className={styles.button}>Back to Pokedex</button>
+									</Link>
 								</div>
-						<Link to="/home">
-							<button className={styles.button}>Back to Pokedex</button>
-						</Link>
 							</div>
 						</div>
 					</div>

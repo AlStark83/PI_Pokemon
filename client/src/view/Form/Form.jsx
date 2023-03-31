@@ -157,15 +157,19 @@ export default function Form() {
 		dispatch(getTypes()); // eslint-disable-next-line
 	}, []);
 	return (
-		<div className="principalContainer">
-			<div className="title">
+		<div id={styles.principalContainer}>
+			<div className={styles.title}>
 				<img
 					src="https://fontmeme.com/permalink/230202/d8c12ed95f7b3c9c9b83256f5c843e28.png"
 					alt=""
 				/>
 			</div>
-
-			<div className="formContainer">
+			<div>
+				<Link to={"/home"}>
+					<button className={styles.button}>Back to Home</button>
+				</Link>
+			</div>
+			<div className={styles.formContainer}>
 				<div>
 					<form onSubmit={(e) => handleSubmit(e)}>
 						<div className={styles.inputAndLabel}>
@@ -177,7 +181,7 @@ export default function Form() {
 								required
 								onChange={(e) => handleChange(e)}
 							/>
-							{errors.name && <p className="error">{errors.name}</p>}
+							{errors.name && <p className={styles.error}>{errors.name}</p>}
 						</div>
 
 						<div className={styles.inputAndLabel}>
@@ -192,7 +196,7 @@ export default function Form() {
 								required
 								onChange={(e) => handleChange(e)}
 							/>
-							{errors.hp && <p className="error">{errors.hp}</p>}
+							{errors.hp && <p className={styles.error}>{errors.hp}</p>}
 						</div>
 						<div className={styles.inputAndLabel}>
 							<label htmlFor="attack">Attack: </label>
@@ -206,7 +210,9 @@ export default function Form() {
 								required
 								onChange={(e) => handleChange(e)}
 							/>
-							{errors.attack && <p className="error">{errors.attack}</p>}
+							<div>
+							{errors.attack && <p className={styles.error}>{errors.attack}</p>}
+							</div>
 						</div>
 						<div className={styles.inputAndLabel}>
 							<label htmlFor="defense">Defense: </label>
@@ -220,7 +226,7 @@ export default function Form() {
 								required
 								onChange={(e) => handleChange(e)}
 							/>
-							{errors.defense && <p className="error">{errors.defense}</p>}
+							{errors.defense && <p className={styles.error}>{errors.defense}</p>}
 						</div>
 						<div className={styles.inputAndLabel}>
 							<label htmlFor="speed">Speed: </label>
@@ -234,7 +240,7 @@ export default function Form() {
 								required
 								onChange={(e) => handleChange(e)}
 							/>
-							{errors.speed && <p className="error">{errors.speed}</p>}
+							{errors.speed && <p className={styles.error}>{errors.speed}</p>}
 						</div>
 						<div className={styles.inputAndLabel}>
 							<label htmlFor="height">Height: </label>
@@ -248,7 +254,7 @@ export default function Form() {
 								required
 								onChange={(e) => handleChange(e)}
 							/>
-							{errors.height && <p className="error">{errors.height}</p>}
+							{errors.height && <p className={styles.error}>{errors.height}</p>}
 						</div>
 						<div className={styles.inputAndLabel}>
 							<label htmlFor="weight">Weight: </label>
@@ -262,7 +268,7 @@ export default function Form() {
 								required
 								onChange={(e) => handleChange(e)}
 							/>
-							{errors.weight && <p className="error">{errors.weight}</p>}
+							{errors.weight && <p className={styles.error}>{errors.weight}</p>}
 						</div>
 						<div className={styles.inputAndLabel}>
 							<label htmlFor="img">Image: </label>
@@ -290,7 +296,7 @@ export default function Form() {
 							<div name="listaParaDisplayNone">
 								<li>{input.types.map((el) => el + ", ")}</li>
 							</div>
-							{errors.types && <p className="error">{errors.types}</p>}
+							{errors.types && <p className={styles.error}>{errors.types}</p>}
 						</div>
 						<div>
 							<button
@@ -322,17 +328,12 @@ export default function Form() {
 						</button>
 					</div>
 				))}
-				<div>
+				{/* <div>
 					<img
 						src="http://pa1.narvii.com/7551/8b482f70f7857bdae3eb6d6f36ba5f44e6e377ccr1-500-270_00.gif"
 						alt="pokemon incubated"
 					/>
-				</div>
-			</div>
-			<div>
-				<Link to={"/home"}>
-					<button className={styles.button}>Back to Home</button>
-				</Link>
+				</div> */}
 			</div>
 		</div>
 	);

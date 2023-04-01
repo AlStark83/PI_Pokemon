@@ -14,6 +14,7 @@ export default function LandingPage() {
 			<div className={styles.col2}>
 				<div className={styles.logo}>
 					<img
+					id={styles.logo}
 						src="https://res.cloudinary.com/dfivzhcuw/image/upload/v1679687192/pokemon-logo_oygf84.png"
 						alt="Pokemon Logo"
 					/>

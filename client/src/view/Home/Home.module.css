@@ -1,75 +1,128 @@
-.grid{
-display: grid;
-grid-template-columns: repeat(auto-fill, 200px);
-gap: 32px;
-padding: 16px;
-align-items: stretch;
-justify-content: space-around;
+header {
+	width: 100vw;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+}
+img {
+	height: 64px;
+}
+.searchAndFilter {
+	max-width: 720px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+.imageHeader {
+	min-width: 360px;
+	max-width: 720px;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
 }
 
-.pokedexImg{
-  margin-top: 16px;
-}
+/* .pokedexImg {
+	justify-self: center;
+} */
 
-.item{
-list-style: none;
-background-color:rgb(62, 62, 255);
-border-radius: 12px;
+.item {
+	list-style: none;
 }
 .button {
-  width: 180px;
+	width: 160px;
 	height: 32px;
-  font-size: 1rem;
-  margin-top: 12px;
-  /* padding: 12px; */
+	font-size: 1rem;
+	margin-top: 12px;
+	/* padding: 12px; */
 	color: rgb(250, 250, 250);
-	background: linear-gradient(90deg, rgb(161, 220, 148),rgb(37,204,169));
-  border-radius: 30px;
-  border-color: rgb(77, 179, 138);
-  box-shadow: 3px 3px rgba(77, 179, 138, 0.6);
-  cursor: pointer;
+	background: linear-gradient(90deg, rgb(161, 220, 148), rgb(37, 204, 169));
+	border-radius: 30px;
+	border-color: rgb(77, 179, 138);
+	box-shadow: 3px 3px rgba(77, 179, 138, 0.6);
+	cursor: pointer;
 }
-.button:hover{
-  color: rgb(77, 179, 138);
+.button:hover {
+	color: rgb(77, 179, 138);
 	background: transparent;
 	border-color: rgb(77, 179, 138, 0.6);
 }
-select{
-  height: 32px;
-  font-weight: bold;
-  color: rgb(77, 179, 138);
-  align-content: center;
-  text-align: center;
-  border-color: rgb(77, 179, 138);
-  border-radius: 30px;
+select {
+	height: 32px;
+	width: 152px;
+	font-weight: bold;
+	color: rgb(77, 179, 138);
+	align-content: center;
+	text-align: center;
+	border-color: rgb(77, 179, 138);
+	border-radius: 30px;
 }
-select:hover{
-  color:rgb(250, 250, 250);
-  background-color:  rgb(77, 179, 138);
+select:hover {
+	color: rgb(250, 250, 250);
+	background-color: rgb(77, 179, 138);
 }
-label{
-  width: 180px;
-color: rgb(77, 179, 138);
-background: transparent;
-border-color: rgb(77, 179, 138);
-border: 5px;
-border-radius: 30px;
-padding: 4px 16px;
-margin: 4px 16px;
+label {
+	min-width: 160px;
+	color: rgb(77, 179, 138);
+	background: transparent;
+	border-color: rgb(77, 179, 138);
+	border: 5px;
+	border-radius: 30px;
 }
-.filters{
-  display: grid;
-  grid-template-columns: repeat(auto-fill, 150px);
-  gap: 12px;
-  margin: 8px;
-  justify-content: space-around;
+.filters {
+	max-width: 720px;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-around;
 }
-.buttonsAndSearch{
-  display: grid;
-  grid-template-columns: repeat(auto-fill, 180px);
-  align-items: stretch;
-  justify-content: space-around;
+.buttonsAndSearch {
+	max-width: 720px;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-around;
 }
-.searchBar{
-width: 400px;
+.buttonsContainer {
+	min-width: 360px;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
+.searchBar {
+	width: 360px;
+}
+.filterOrSort {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: center;
+	text-align: center;
+	width: 160px;
+}
+li{
+	height: 80px;
+}
+
+.gridAndPaginate{
+  width: 100vw;
+	display:flex;
+	flex-direction: column;
+	align-items: center;
+}
+.grid{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	width: 90vw;
+	gap:24px;
+	width: 80vw;
+	max-width: 1080px;
+	min-width: 320px;
+	margin-top: 16px;
+	margin-bottom: 16px;
 }

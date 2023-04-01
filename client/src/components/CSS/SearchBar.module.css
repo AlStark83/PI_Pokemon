@@ -1,14 +1,15 @@
-.container{
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  margin-top: 8px;margin-left: -20px;
+.container {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	margin-top: 8px;
+	margin-left: -20px;
 }
 .searchButton {
 	width: 40px;
 	height: 40px;
-  margin-left: -42px;
+	margin-left: -42px;
 	font-size: 1rem;
 	/* padding: 12px; */
 	color: rgb(250, 250, 250);
@@ -21,14 +22,13 @@
 .searchButton:hover {
 	background: rgb(77, 179, 138);
 	border-color: rgb(77, 179, 138, 0.6);
-  
 }
-input {
+#searchbar {
 	height: 38px;
-  width: 280px;
-  border-radius: 40px;
-  font-weight: bold;
-  text-align: center;
+	width: 280px;
+	border-radius: 40px;
+	font-weight: bold;
+	text-align: center;
 	background-color: rgb(221, 224, 219);
 	color: rgb(72, 105, 109);
 }

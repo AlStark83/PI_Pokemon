@@ -1,15 +1,15 @@
 import React from "react";
-import  styles  from "./CSS/Loader.module.css";
+import styles from "./CSS/Loader.module.css";
+import { Wobble } from "@uiball/loaders";
 
 const Loader = () => {
-  return (
-    <div className={styles.loader}>
-      <img
-        src="https://fontmeme.com/permalink/230202/cb6bd3df64d17f66b0021c1654cc80e6.png"
-        alt="Cargando..."
-      />
-    </div>
-  );
+	return (
+		<div className={styles.loader}>
+			<div className={styles.spinner}>
+				<Wobble size={160} lineWeight={16} speed={1.4} color="hsl(0.0, 0%, 90%)" />
+			</div>
+		</div>
+	);
 };
 
 export default Loader;

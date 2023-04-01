@@ -63,7 +63,6 @@ export default function Home() {
 	console.log(allPokemons);
 	return (
 		<div>
-			{allPokemons.length ? (
 				<div>
 					<div>
 						<header>
@@ -152,6 +151,10 @@ export default function Home() {
 								</div>
 							</div>
 						</header>
+
+			{allPokemons.length ? (
+
+
 						<div className={styles.gridAndPaginate}>
 							<Paginado
 								pokemonsPerPage={pokemonsPerPage}
@@ -181,11 +184,14 @@ export default function Home() {
 								paginado={paginado}
 							/>
 						</div>
+
+					) : (
+						<Loader />
+					)}
+
+
 					</div>
 				</div>
-			) : (
-				<Loader />
-			)}
 		</div>
 	);
 }

@@ -1,7 +1,11 @@
 .loader {
-  background-image: url("https://64.media.tumblr.com/a79af535f76793b3c4efb249aa35959a/tumblr_pep348fsjU1sgge6vo1_500.gifv");
-  background-size: 100% 100%;
-  width: 100%;
-  min-height: 95vh;
-  padding-top: 37px;
+
+  margin-left: calc(50vw - 80px);
+  margin-top: calc(60vh - 300px);
+}
+
+.spinner{
+  width: 160px;
+  background: linear-gradient(90deg, rgb(161, 220, 148), rgb(37, 204, 169));
+  border-radius: 80px;
 }

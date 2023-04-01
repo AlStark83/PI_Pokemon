@@ -24,8 +24,9 @@ export default function SearchBar() {
 		dispatch(getNamePokemon(name));
 	}
 	return (
-		<div className={styles.container}>
+		<div  className={styles.container}>
 			<input
+			id={styles.searchbar}
 				type="text"
 				placeholder="Search..."
 				onChange={(e) => handleInputChange(e)}

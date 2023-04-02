@@ -154,7 +154,7 @@ export default function Form() {
 	}
 
 	useEffect(() => {
-		dispatch(getTypes()); // eslint-disable-next-line
+		dispatch(getTypes());
 	}, []);
 	return (
 		<div id={styles.principalContainer}>

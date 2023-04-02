@@ -11,11 +11,9 @@ export default function Detail(props) {
 	const dispatch = useDispatch();
 
 	useEffect(() => {
-		dispatch(getDetail(props.match.params.id)); // eslint-disable-next-line
-	}, []);
+		dispatch(getDetail(props.match.params.id)); 
 	const myPokemon = useSelector((state) => state.detail);
-	console.log(myPokemon);
-	// console.log(myPokemon.types.length);
+})
 	return (
 		<div>
 			{

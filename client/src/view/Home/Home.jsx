@@ -17,10 +17,10 @@ import Loader from "../../components/Loader";
 
 export default function Home() {
 	const dispatch = useDispatch();
-	const allPokemons = useSelector((state) => state.pokemons); // eslint-disable-next-line
-	const types = useSelector((state) => state.types); // eslint-disable-next-line
+	const allPokemons = useSelector((state) => state.pokemons); 
+	const types = useSelector((state) => state.types); 
 	const [orden, setOrden] = useState("");
-	const [currentPage, setCurrentPage] = useState(1); // eslint-disable-next-line
+	const [currentPage, setCurrentPage] = useState(1); 
 	const [pokemonsPerPage, setPokemonsPerPage] = useState(20);
 	const indexOfLastPokemon = currentPage * pokemonsPerPage; //20
 	const indexOfFirtsPokemon = indexOfLastPokemon - pokemonsPerPage; //0

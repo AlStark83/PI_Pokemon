@@ -17,7 +17,7 @@ export default function Detail(props) {
 	return (
 		<div>
 			{
-				{myPokemon.name} ? (
+				myPokemon.name ? (
 					<div className={styles.mainContainer}>
 						<div className={styles.detailsContainer}>
 							<div id={styles.pokemonAndName}className={styles.col}>

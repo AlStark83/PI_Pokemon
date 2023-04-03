@@ -6,7 +6,7 @@ import PokemonCreate from "./view/Form/Form";
 import Detail from "./view/Detail/Detail";
 import Loader from "./components/Loader";
 import axios from "axios";
-axios.defaults.baseURL = "http://localhost:3001"
+axios.defaults.baseURL = "https://pipokemon-production-c672.up.railway.app/"
 
 function App() {
 	return (

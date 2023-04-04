@@ -76,14 +76,17 @@ export function getDetail(id) {
 	return async function (dispatch) {
 		try {
 			var json = await axios.get(`/pokemons/${id}`);
-			console.log(json.data);
 			
 			return dispatch({
 				type: "GET_DETAILS",
-				payload: json.data,
+				payload: json.data
 			});
 		} catch (error) {
 			console.log(error);
 		}
 	};
+}
+
+export function cleanPokemon () {
+	return {type: "CLEAN_POKEMON"}
 }

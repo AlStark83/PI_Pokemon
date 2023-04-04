@@ -106,13 +106,12 @@ function rootReducer(state = initialState, action) {
 				allPokemons: sortedAttackArr,
 			};
 			case "GET_DETAILS":{
-				console.log(action.payload);
-				
 				return {
-					...state,
-					detail: {...action.payload}
+					...state,	detail: {...action.payload}
 				}
 			}
+			case "CLEAN_POKEMON":
+				return { ...state, pokeDetail: {} };
 			
 		default:
 			return state;

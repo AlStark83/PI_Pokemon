@@ -6,12 +6,12 @@ const {
   DB_USER, DB_PASSWORD, DB_HOST, DB_NAME,DB_URL
 } = process.env;
 
-const sequelize = new Sequelize(`${DB_URL}`);
+// const sequelize = new Sequelize(`${DB_URL}`);
 
-// const sequelize = new Sequelize(`${DB_NAME}`, `${DB_USER}`, `${DB_PASSWORD}`, {
-//   host: `${DB_HOST}`,
-//   dialect: /* one of 'mysql' | */'postgres'/* | 'sqlite' | 'mariadb' | 'mssql' | 'db2' | 'snowflake' | 'oracle' */
-// });
+const sequelize = new Sequelize(`${DB_NAME}`, `${DB_USER}`, `${DB_PASSWORD}`, {
+  host: `${DB_HOST}`,
+  dialect: /* one of 'mysql' | */'postgres'/* | 'sqlite' | 'mariadb' | 'mssql' | 'db2' | 'snowflake' | 'oracle' */
+});
 
 const basename = path.basename(__filename);
 
